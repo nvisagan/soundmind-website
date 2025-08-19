@@ -78,7 +78,7 @@ export function BlogSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -99,7 +99,7 @@ export function BlogSection() {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.6, 1],
           }}
         />
         <motion.div
@@ -111,7 +111,7 @@ export function BlogSection() {
           transition={{
             duration: 6,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.6, 1],
           }}
         />
       </div>
@@ -228,7 +228,7 @@ export function BlogSection() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
         >
-          {regularPosts.map((post, index) => (
+          {regularPosts.map((post) => (
             <motion.div
               key={post.id}
               variants={itemVariants}
