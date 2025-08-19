@@ -81,27 +81,6 @@ const stats = [
 ];
 
 export function FeaturesSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
 
   return (
     <section className="py-20 relative overflow-hidden">
@@ -116,7 +95,7 @@ export function FeaturesSection() {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.6, 1],
           }}
         />
         <motion.div
@@ -128,7 +107,7 @@ export function FeaturesSection() {
           transition={{
             duration: 10,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.4, 0, 0.6, 1],
           }}
         />
       </div>
@@ -167,21 +146,21 @@ export function FeaturesSection() {
         </motion.div>
 
         {/* Features Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  ease: "easeOut"
+                }}
                 whileHover={{ y: -5 }}
-                transition={{ duration: 0.2 }}
               >
                 <Card className="glass p-6 h-full hover-lift relative overflow-hidden group">
                   {/* Background Gradient */}
@@ -217,7 +196,7 @@ export function FeaturesSection() {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* Stats Section */}
         <motion.div

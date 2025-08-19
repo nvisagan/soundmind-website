@@ -61,27 +61,6 @@ const blogPosts = [
 ];
 
 export function BlogSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
-    }
-  };
 
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = blogPosts.filter(post => !post.featured);
@@ -221,19 +200,19 @@ export function BlogSection() {
         )}
 
         {/* Regular Posts Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
-          {regularPosts.map((post) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {regularPosts.map((post, index) => (
             <motion.div
               key={post.id}
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
               whileHover={{ y: -5 }}
-              transition={{ duration: 0.2 }}
             >
               <Card className="glass overflow-hidden h-full hover-lift group">
                 {/* Image */}
@@ -304,7 +283,7 @@ export function BlogSection() {
               </Card>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* View All Button */}
         <motion.div
