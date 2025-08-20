@@ -46,7 +46,7 @@ const features = [
   {
     icon: Clock,
     title: "Instant Understanding",
-    description: "Know how you're feeling in real-time. No more guessing - get clear emotional insights as you speak.",
+    description: "Know how you&apos;re feeling in real-time. No more guessing - get clear emotional insights as you speak.",
     color: "#D4A5A5",
     bgColor: "rgba(212, 165, 165, 0.1)"
   },
@@ -152,7 +152,7 @@ export function FeaturesSection() {
           
           <p className="text-xl" style={{ color: '#666666' }}>
             Experience the difference when technology actually understands you. 
-            Join thousands who've transformed their emotional wellness through voice insights.
+            Join thousands who&apos;ve transformed their emotional wellness through voice insights.
           </p>
         </motion.div>
 

@@ -82,7 +82,7 @@ export function HeroSection() {
               }}
             >
               <Sparkles className="w-4 h-4" style={{ color: '#C4755B' }} />
-              Your voice reveals what you can't see
+              Your voice reveals what you can&apos;t see
             </motion.div>
 
             {/* Heading */}
@@ -113,7 +113,7 @@ export function HeroSection() {
               style={{ color: '#666666' }}
             >
               Understand yourself better with voice analysis that reveals emotional patterns 
-              you didn't know existed. Join the thousands already transforming their 
+              you didn&apos;t know existed. Join the thousands already transforming their 
               mental wellness journey with Soundmind.
             </motion.p>
 
