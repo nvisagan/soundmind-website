@@ -44,7 +44,7 @@ export function EmailSignup() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
+    <section id="email-signup" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div

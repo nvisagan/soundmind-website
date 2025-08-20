@@ -15,6 +15,19 @@ import {
 } from "lucide-react";
 
 export function HeroSection() {
+  const scrollToEmailSignup = () => {
+    // Add conversion tracking here if needed (e.g., analytics)
+    // gtag('event', 'cta_click', { event_category: 'engagement' });
+    
+    const element = document.getElementById('email-signup');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
       {/* Animated Background */}
@@ -126,6 +139,7 @@ export function HeroSection() {
             >
               <Button 
                 size="lg" 
+                onClick={scrollToEmailSignup}
                 className="group relative overflow-hidden border-0 hover:shadow-lg transition-all duration-300"
                 style={{ backgroundColor: '#C4755B', color: 'white' }}
               >
