@@ -17,45 +17,45 @@ import {
 const features = [
   {
     icon: Mic,
-    title: "Voice Analysis",
-    description: "Advanced AI analyzes your voice patterns, tone, and speech to detect emotional states with 95% accuracy.",
-    color: "primary",
-    gradient: "from-primary/20 to-primary/5"
+    title: "Understand Your Voice",
+    description: "Discover emotional insights hidden in your voice patterns. Our AI reveals what traditional methods miss.",
+    color: "#C4755B",
+    bgColor: "rgba(196, 117, 91, 0.1)"
   },
   {
     icon: Brain,
-    title: "AI-Powered Insights",
-    description: "Machine learning algorithms provide personalized recommendations and insights to improve your mental wellness.",
-    color: "accent",
-    gradient: "from-accent/20 to-accent/5"
+    title: "Personalized Insights",
+    description: "Get tailored recommendations that actually work for you. Transform awareness into meaningful change.",
+    color: "#E6A85C",
+    bgColor: "rgba(230, 168, 92, 0.1)"
   },
   {
     icon: LineChart,
-    title: "Mood Tracking",
-    description: "Visualize your emotional journey with beautiful, interactive charts and detailed analytics over time.",
-    color: "chart-2",
-    gradient: "from-green-500/20 to-green-500/5"
+    title: "Track Your Progress",
+    description: "Watch your emotional patterns unfold over time. Celebrate growth and identify what's working.",
+    color: "#9DB5A1",
+    bgColor: "rgba(157, 181, 161, 0.1)"
   },
   {
     icon: Shield,
-    title: "Privacy First",
-    description: "Your voice data is encrypted and processed locally. We never store your personal conversations.",
-    color: "chart-3",
-    gradient: "from-purple-500/20 to-purple-500/5"
+    title: "Your Privacy Matters",
+    description: "Your voice stays yours. All analysis happens locally with bank-level security protecting your data.",
+    color: "#7D5A7D",
+    bgColor: "rgba(125, 90, 125, 0.1)"
   },
   {
     icon: Clock,
-    title: "Real-Time Analysis",
-    description: "Get instant feedback and mood insights as you speak, with results appearing in seconds.",
-    color: "primary",
-    gradient: "from-primary/20 to-primary/5"
+    title: "Instant Understanding",
+    description: "Know how you're feeling in real-time. No more guessing - get clear emotional insights as you speak.",
+    color: "#D4A5A5",
+    bgColor: "rgba(212, 165, 165, 0.1)"
   },
   {
     icon: Heart,
-    title: "Wellness Support",
-    description: "Receive personalized coping strategies and wellness recommendations based on your mood patterns.",
-    color: "accent",
-    gradient: "from-accent/20 to-accent/5"
+    title: "Feel Better, Faster",
+    description: "Move from awareness to action with personalized strategies that help you thrive, not just survive.",
+    color: "#C4755B",
+    bgColor: "rgba(196, 117, 91, 0.1)"
   }
 ];
 
@@ -83,11 +83,12 @@ const stats = [
 export function FeaturesSection() {
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 rounded-full bg-primary/5 blur-xl"
+          className="absolute top-20 left-20 w-32 h-32 rounded-full blur-xl"
+          style={{ backgroundColor: 'rgba(196, 117, 91, 0.15)' }}
           animate={{
             x: [0, 30, 0],
             y: [0, -20, 0],
@@ -99,7 +100,8 @@ export function FeaturesSection() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-accent/5 blur-xl"
+          className="absolute bottom-20 right-10 w-48 h-48 rounded-full blur-xl"
+          style={{ backgroundColor: 'rgba(230, 168, 92, 0.15)' }}
           animate={{
             x: [0, -40, 0],
             y: [0, 30, 0],
@@ -126,22 +128,31 @@ export function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border"
+            style={{
+              backgroundColor: 'rgba(157, 181, 161, 0.1)',
+              borderColor: 'rgba(157, 181, 161, 0.3)',
+              color: '#9DB5A1'
+            }}
           >
-            <Brain className="w-4 h-4 text-primary" />
+            <Brain className="w-4 h-4" style={{ color: '#9DB5A1' }} />
             Powered by Advanced AI
           </motion.div>
           
-          <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-            Features That Make{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-chart-2 bg-clip-text text-transparent">
-              Soundmind Special
+          <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" style={{ color: '#2D2D2D' }}>
+            Benefits That Make{" "}
+            <span className="bg-gradient-to-r bg-clip-text text-transparent" style={{
+              background: 'linear-gradient(to right, #C4755B, #E6A85C, #9DB5A1)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Life Better
             </span>
           </h2>
           
-          <p className="text-xl text-muted-foreground">
-            Discover how our cutting-edge technology transforms the way you understand 
-            and manage your mental wellness through voice analysis.
+          <p className="text-xl" style={{ color: '#666666' }}>
+            Experience the difference when technology actually understands you. 
+            Join thousands who've transformed their emotional wellness through voice insights.
           </p>
         </motion.div>
 
@@ -160,32 +171,40 @@ export function FeaturesSection() {
                   delay: index * 0.1,
                   ease: "easeOut"
                 }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -8 }}
               >
-                <Card className="glass p-6 h-full hover-lift relative overflow-hidden group">
+                <Card className="p-6 h-full relative overflow-hidden group transition-all duration-300 backdrop-blur-md border-0" style={{
+                  background: 'rgba(255, 255, 255, 0.6)',
+                  backdropFilter: 'blur(16px)',
+                  boxShadow: '0 4px 16px rgba(45, 45, 45, 0.08)'
+                }}>
                   {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+                    background: `linear-gradient(135deg, ${feature.bgColor}, rgba(255, 255, 255, 0.1))`
+                  }} />
                   
                   <div className="relative z-10 space-y-4">
                     {/* Icon */}
                     <motion.div
-                      className={`w-12 h-12 rounded-xl bg-${feature.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                      className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: feature.bgColor }}
                       whileHover={{ rotate: 5 }}
                     >
-                      <Icon className={`w-6 h-6 text-${feature.color}`} />
+                      <Icon className="w-6 h-6" style={{ color: feature.color }} />
                     </motion.div>
                     
                     {/* Content */}
                     <div className="space-y-2">
-                      <h3 className="text-xl font-semibold">{feature.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <h3 className="text-xl font-semibold" style={{ color: '#2D2D2D' }}>{feature.title}</h3>
+                      <p className="leading-relaxed" style={{ color: '#666666' }}>
                         {feature.description}
                       </p>
                     </div>
                     
                     {/* Hover Arrow */}
                     <motion.div
-                      className="flex items-center gap-2 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="flex items-center gap-2 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ color: feature.color }}
                       initial={{ x: -10 }}
                       whileHover={{ x: 0 }}
                     >
@@ -206,12 +225,16 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <Card className="glass p-8 lg:p-12">
+          <Card className="p-8 lg:p-12 backdrop-blur-md border-0" style={{
+            background: 'rgba(255, 255, 255, 0.6)',
+            backdropFilter: 'blur(16px)',
+            boxShadow: '0 8px 32px rgba(45, 45, 45, 0.1)'
+          }}>
             <div className="text-center mb-12">
-              <h3 className="text-3xl lg:text-4xl font-bold mb-4">
+              <h3 className="text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#2D2D2D' }}>
                 Trusted by Thousands
               </h3>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-lg" style={{ color: '#666666' }}>
                 Join a growing community of users who have transformed their mental wellness journey
               </p>
             </div>
@@ -229,14 +252,16 @@ export function FeaturesSection() {
                     className="text-center group"
                   >
                     <motion.div
-                      className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                      className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                      style={{ backgroundColor: 'rgba(196, 117, 91, 0.1)' }}
                       whileHover={{ rotate: 10 }}
                     >
-                      <Icon className="w-8 h-8 text-primary" />
+                      <Icon className="w-8 h-8" style={{ color: '#C4755B' }} />
                     </motion.div>
                     
                     <motion.div
-                      className="text-4xl font-bold text-primary mb-2"
+                      className="text-4xl font-bold mb-2"
+                      style={{ color: '#C4755B' }}
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
@@ -245,8 +270,8 @@ export function FeaturesSection() {
                       {stat.value}
                     </motion.div>
                     
-                    <div className="font-semibold mb-1">{stat.label}</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="font-semibold mb-1" style={{ color: '#2D2D2D' }}>{stat.label}</div>
+                    <div className="text-sm" style={{ color: '#666666' }}>
                       {stat.description}
                     </div>
                   </motion.div>

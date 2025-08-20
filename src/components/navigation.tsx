@@ -70,23 +70,25 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? "glass border-b border-border/20 backdrop-blur-xl" 
-            : "bg-transparent"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: scrolled ? 'rgba(245, 241, 235, 0.95)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(20px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(196, 117, 91, 0.1)' : 'none'
+        }}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <motion.div
-                className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                className="w-10 h-10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                style={{ backgroundColor: 'rgba(196, 117, 91, 0.1)' }}
                 whileHover={{ rotate: 5 }}
               >
-                <Brain className="w-6 h-6 text-primary" />
+                <Brain className="w-6 h-6" style={{ color: '#C4755B' }} />
               </motion.div>
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-xl font-bold" style={{ color: '#2D2D2D' }}>
                 Soundmind
               </span>
             </Link>
@@ -99,11 +101,14 @@ export function Navigation() {
                   href={item.href}
                   className="relative group py-2"
                 >
-                  <span className="text-foreground/80 hover:text-foreground transition-colors duration-200">
+                  <span className="transition-colors duration-200 hover:opacity-100" style={{ 
+                    color: 'rgba(45, 45, 45, 0.8)'
+                  }}>
                     {item.name}
                   </span>
                   <motion.div
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"
+                    className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
+                    style={{ background: 'linear-gradient(to right, #C4755B, #E6A85C)' }}
                     whileHover={{ width: "100%" }}
                   />
                 </Link>
@@ -131,10 +136,14 @@ export function Navigation() {
                 </motion.div>
               </Button>
               
-              <Button className="group relative overflow-hidden">
+              <Button className="group relative overflow-hidden border-0 hover:shadow-lg transition-all duration-300" style={{
+                backgroundColor: '#C4755B',
+                color: 'white'
+              }}>
                 <span className="relative z-10">Get Started</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-accent to-chart-2"
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(to right, #E6A85C, #9DB5A1)' }}
                   initial={{ x: "-100%" }}
                   whileHover={{ x: "0%" }}
                   transition={{ duration: 0.3 }}
@@ -222,16 +231,25 @@ export function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-80 max-w-[80vw] z-50 lg:hidden glass border-l border-border/20"
+            className="fixed top-0 right-0 h-full w-80 max-w-[80vw] z-50 lg:hidden border-l"
+            style={{
+              background: 'rgba(245, 241, 235, 0.95)',
+              backdropFilter: 'blur(20px)',
+              borderLeftColor: 'rgba(196, 117, 91, 0.1)'
+            }}
           >
             <div className="flex flex-col h-full">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-border/20">
+              <div className="flex items-center justify-between p-6 border-b" style={{
+                borderBottomColor: 'rgba(196, 117, 91, 0.1)'
+              }}>
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-primary" />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
+                    backgroundColor: 'rgba(196, 117, 91, 0.1)'
+                  }}>
+                    <Brain className="w-5 h-5" style={{ color: '#C4755B' }} />
                   </div>
-                  <span className="font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  <span className="font-bold" style={{ color: '#2D2D2D' }}>
                     Soundmind
                   </span>
                 </div>
@@ -260,10 +278,15 @@ export function Navigation() {
                         <Link
                           href={item.href}
                           onClick={closeMenu}
-                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted/50 transition-colors duration-200 group"
+                          className="flex items-center gap-3 p-3 rounded-xl transition-colors duration-200 group hover:bg-opacity-10"
+                          style={{
+                            ':hover': { backgroundColor: 'rgba(196, 117, 91, 0.05)' }
+                          }}
                         >
-                          <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-200" />
-                          <span className="font-medium">{item.name}</span>
+                          <Icon className="w-5 h-5 transition-colors duration-200 group-hover:opacity-80" style={{
+                            color: '#999999'
+                          }} />
+                          <span className="font-medium" style={{ color: '#2D2D2D' }}>{item.name}</span>
                         </Link>
                       </motion.div>
                     );
@@ -272,18 +295,24 @@ export function Navigation() {
               </div>
 
               {/* Bottom Actions */}
-              <div className="p-6 border-t border-border/20 space-y-4">
-                <Button className="w-full group relative overflow-hidden">
+              <div className="p-6 border-t space-y-4" style={{
+                borderTopColor: 'rgba(196, 117, 91, 0.1)'
+              }}>
+                <Button className="w-full group relative overflow-hidden border-0 hover:shadow-lg transition-all duration-300" style={{
+                  backgroundColor: '#C4755B',
+                  color: 'white'
+                }}>
                   <span className="relative z-10">Get Started</span>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-accent to-chart-2"
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(to right, #E6A85C, #9DB5A1)' }}
                     initial={{ x: "-100%" }}
                     whileHover={{ x: "0%" }}
                     transition={{ duration: 0.3 }}
                   />
                 </Button>
                 
-                <div className="text-center text-sm text-muted-foreground">
+                <div className="text-center text-sm" style={{ color: '#666666' }}>
                   Transform your mental wellness journey
                 </div>
               </div>

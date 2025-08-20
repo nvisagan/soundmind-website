@@ -44,11 +44,12 @@ export function EmailSignup() {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#F5F1EB' }}>
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-10 right-10 w-40 h-40 rounded-full bg-accent/5 blur-xl"
+          className="absolute top-10 right-10 w-40 h-40 rounded-full blur-xl"
+          style={{ backgroundColor: 'rgba(230, 168, 92, 0.15)' }}
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -60,7 +61,8 @@ export function EmailSignup() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-10 w-32 h-32 rounded-full bg-chart-2/10 blur-xl"
+          className="absolute bottom-20 left-10 w-32 h-32 rounded-full blur-xl"
+          style={{ backgroundColor: 'rgba(157, 181, 161, 0.2)' }}
           animate={{
             x: [0, 20, 0],
             y: [0, -15, 0],
@@ -115,7 +117,11 @@ export function EmailSignup() {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <Card className="glass p-8 lg:p-12 hover-lift">
+            <Card className="p-8 lg:p-12 transition-all duration-300 backdrop-blur-md border-0 shadow-xl" style={{
+              background: 'rgba(255, 255, 255, 0.4)',
+              backdropFilter: 'blur(20px)',
+              boxShadow: '0 12px 40px rgba(45, 45, 45, 0.15)'
+            }}>
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-4">
@@ -153,7 +159,7 @@ export function EmailSignup() {
                           />
                         ) : (
                           <>
-                            Join Waitlist
+                            Join 2,847 others waiting
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                           </>
                         )}
@@ -236,16 +242,16 @@ export function EmailSignup() {
             className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-primary">2,847</div>
-              <div className="text-sm text-muted-foreground">People on waitlist</div>
+              <div className="text-3xl font-bold" style={{ color: '#C4755B' }}>2,847</div>
+              <div className="text-sm" style={{ color: '#666666' }}>People waiting for launch</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-accent">HIPAA</div>
-              <div className="text-sm text-muted-foreground">Compliant & Secure</div>
+              <div className="text-3xl font-bold" style={{ color: '#E6A85C' }}>HIPAA</div>
+              <div className="text-sm" style={{ color: '#666666' }}>Compliant & Secure</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-chart-2">AI-Powered</div>
-              <div className="text-sm text-muted-foreground">Advanced Analysis</div>
+              <div className="text-3xl font-bold" style={{ color: '#9DB5A1' }}>AI-Powered</div>
+              <div className="text-sm" style={{ color: '#666666' }}>Advanced Analysis</div>
             </div>
           </motion.div>
         </motion.div>
