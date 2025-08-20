@@ -279,9 +279,6 @@ export function Navigation() {
                           href={item.href}
                           onClick={closeMenu}
                           className="flex items-center gap-3 p-3 rounded-xl transition-colors duration-200 group hover:bg-opacity-10"
-                          style={{
-                            ':hover': { backgroundColor: 'rgba(196, 117, 91, 0.05)' }
-                          }}
                         >
                           <Icon className="w-5 h-5 transition-colors duration-200 group-hover:opacity-80" style={{
                             color: '#999999'
