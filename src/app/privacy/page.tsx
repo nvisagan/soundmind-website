@@ -211,7 +211,7 @@ export default function PrivacyPage() {
 
         <section id="children-privacy">
           <h2 className="text-3xl font-bold mb-6" style={{ color: '#2D2D2D' }}>
-            9. Children's Privacy
+            9. Children&apos;s Privacy
           </h2>
           
           <p className="mb-6">
@@ -228,7 +228,7 @@ export default function PrivacyPage() {
           
           <p className="mb-6">
             We may update this Privacy Policy from time to time. We will notify you of any material 
-            changes by posting the new policy on this page and updating the "Last updated" date. 
+            changes by posting the new policy on this page and updating the &quot;Last updated&quot; date. 
             Continued use of our services after changes become effective constitutes acceptance of the updated policy.
           </p>
         </section>

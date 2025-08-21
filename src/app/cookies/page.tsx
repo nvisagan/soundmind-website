@@ -158,7 +158,7 @@ export default function CookiesPage() {
           
           <p className="mb-4">
             We work with trusted third-party services that may place cookies on your device. 
-            These partners help us provide better services and understand our users' needs.
+            These partners help us provide better services and understand our users&apos; needs.
           </p>
 
           <h3 className="text-xl font-semibold mb-4" style={{ color: '#C4755B' }}>
@@ -261,7 +261,7 @@ export default function CookiesPage() {
           </h2>
           
           <p className="mb-4">
-            When you first visit our website, we'll ask for your consent to use non-essential cookies. 
+            When you first visit our website, we&apos;ll ask for your consent to use non-essential cookies. 
             You can change your preferences at any time using our cookie consent manager.
           </p>
 
@@ -275,7 +275,7 @@ export default function CookiesPage() {
           </ul>
 
           <p className="mb-6">
-            You can update your cookie preferences at any time by clicking the "Cookie Settings" 
+            You can update your cookie preferences at any time by clicking the &quot;Cookie Settings&quot; 
             link in our website footer or contacting us directly.
           </p>
         </section>
@@ -288,7 +288,7 @@ export default function CookiesPage() {
           <p className="mb-6">
             We may update this Cookie Policy from time to time to reflect changes in our practices 
             or for other operational, legal, or regulatory reasons. When we make changes, we will 
-            update the "Last updated" date at the top of this policy.
+            update the &quot;Last updated&quot; date at the top of this policy.
           </p>
         </section>
 

@@ -31,7 +31,7 @@ export default function TermsPage() {
       <div className="space-y-12">
         <div>
           <p className="text-xl leading-relaxed mb-6" style={{ color: '#666666' }}>
-            These Terms of Service govern your use of Soundmind's voice analysis platform. 
+            These Terms of Service govern your use of Soundmind&apos;s voice analysis platform. 
             By using our services, you agree to be bound by these terms.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function TermsPage() {
           </h2>
           
           <p className="mb-4">
-            By accessing or using Soundmind ("the Service"), you agree to be bound by these Terms of Service 
+            By accessing or using Soundmind (&quot;the Service&quot;), you agree to be bound by these Terms of Service 
             and our Privacy Policy. If you do not agree to these terms, please do not use our Service.
           </p>
 
@@ -151,7 +151,7 @@ export default function TermsPage() {
             <li>Use the service for unauthorized commercial purposes</li>
             <li>Reverse engineer or attempt to extract our algorithms</li>
             <li>Submit false or misleading information</li>
-            <li>Interfere with other users' access to the service</li>
+            <li>Interfere with other users&apos; access to the service</li>
           </ul>
         </section>
 
@@ -233,7 +233,7 @@ export default function TermsPage() {
           <h3 className="text-xl font-semibold mb-4" style={{ color: '#C4755B' }}>
             Service Disclaimers
           </h3>
-          <p className="mb-4">Our service is provided "as is" without warranties of any kind. We disclaim:</p>
+          <p className="mb-4">Our service is provided &quot;as is&quot; without warranties of any kind. We disclaim:</p>
           <ul className="mb-6 space-y-2">
             <li>Guarantees of accuracy, reliability, or completeness</li>
             <li>Warranties of merchantability or fitness for a particular purpose</li>
