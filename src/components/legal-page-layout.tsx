@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Mail, Calendar } from "lucide-react";
+import "@/styles/legal-prose.css";
 
 interface Section {
   id: string;
@@ -132,14 +133,7 @@ export function LegalPageLayout({ title, lastUpdated, sections, children }: Lega
                 backdropFilter: 'blur(16px)',
                 boxShadow: '0 8px 32px rgba(45, 45, 45, 0.1)'
               }}>
-                <div className="prose prose-lg max-w-none" style={{
-                  '--tw-prose-body': '#2D2D2D',
-                  '--tw-prose-headings': '#2D2D2D',
-                  '--tw-prose-links': '#C4755B',
-                  '--tw-prose-bold': '#2D2D2D',
-                  '--tw-prose-counters': '#666666',
-                  '--tw-prose-bullets': '#C4755B',
-                }}>
+                <div className="prose prose-lg max-w-none legal-prose">
                   {children}
                 </div>
               </Card>

@@ -1,0 +1,37 @@
+/* Legal page prose styling */
+.legal-prose {
+  --tw-prose-body: #2D2D2D;
+  --tw-prose-headings: #2D2D2D;
+  --tw-prose-links: #C4755B;
+  --tw-prose-bold: #2D2D2D;
+  --tw-prose-counters: #666666;
+  --tw-prose-bullets: #C4755B;
+}
+
+.legal-prose h2 {
+  color: #2D2D2D;
+}
+
+.legal-prose h3 {
+  color: #C4755B;
+}
+
+.legal-prose p {
+  color: #2D2D2D;
+}
+
+.legal-prose a {
+  color: #C4755B;
+}
+
+.legal-prose strong {
+  color: #2D2D2D;
+}
+
+.legal-prose ul li::marker {
+  color: #C4755B;
+}
+
+.legal-prose ol li::marker {
+  color: #666666;
+}
